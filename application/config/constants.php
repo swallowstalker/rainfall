@@ -36,6 +36,10 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/* Constant untuk rainfall. */
+define('ALL_LIST', 0);
+define('UNRESOLVED', 1);
+define('RESOLVED', 2);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

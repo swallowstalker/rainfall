@@ -4,7 +4,7 @@
      */
     class Masalah_Controller extends CI_Controller {
         
-        function __construct($argument) {
+        function __construct() {
             
         }
 		
