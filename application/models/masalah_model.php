@@ -17,18 +17,18 @@
 		 * $data akan berisi elemen masalah, terdiri dari: 
 		 * deskripsi, deadline, status resolved. (tanpa id)
 		 */
-		public function add($data=array()) {
+		public function add($masalah=array()) {
 			
 			// masalah udah ada yang sama persis -> ga boleh.
 			$this->db->from('masalah');
-			$this->db->where($data);
+			$this->db->where($masalah);
 			$count = $this->db->count_all_results();
 			
 			if ($count != 0) {
 				return FALSE;
 			} else {
 				// tambah data.
-				$this->db->insert('masalah', $data);
+				$this->db->insert('masalah', $masalah);
 				return TRUE;
 			}
 		}
@@ -39,7 +39,7 @@
 		 * deskripsi, deadline, status resolved. (tanpa id)
 		 * $id berisi id masalah.
 		 */
-		public function edit($id, $data=array()) {
+		public function edit($id, $masalah=array()) {
 			
 			// masalah dengan id yang sama ditemukan -> ubah.
 			$this->db->from('masalah');
@@ -49,7 +49,7 @@
 			if ($count != 0) {
 				// update data
 				$this->db->where('id', $id);
-				$this->db->update('masalah', $data);
+				$this->db->update('masalah', $masalah);
 				return TRUE;
 			} else {
 				return FALSE;
@@ -96,7 +96,8 @@
 				} elseif ($mode == RESOLVED) {
 					$this->db->where('resolved', TRUE);
 				}
-				return $this->db->get('masalah');
+				$query = $this->db->get('masalah');
+				return $query->result_array();
 			} else {
 				return FALSE;
 			}
@@ -116,7 +117,8 @@
 				// ambil masalah berdasarkan id.
 				$this->db->from('masalah');
 				$this->db->where('id', $id);
-				return $this->db->get();
+				$query = $this->db->get();
+				return $query->row_array();
 			} else {
 				return FALSE;
 			}
