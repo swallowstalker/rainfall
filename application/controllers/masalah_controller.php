@@ -1,6 +1,6 @@
 <?php
     /**
-     * 
+     * Controller untuk masalah yang terjadi pada situasi bencana.
      */
     class Masalah_Controller extends CI_Controller {
         

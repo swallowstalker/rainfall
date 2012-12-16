@@ -30,11 +30,11 @@
 		    foreach ($listKondisi as $kondisi) {
 		    	echo '<tr>';
 		        echo '<td>' . $kondisi['nama_daerah'] . '</td>';
-				echo '<td>' . $kondisi['air'] . '</td>';
-				echo '<td>' . $kondisi['makanan'] . '</td>';
-				echo '<td>' . $kondisi['listrik'] . '</td>';
-				echo '<td>' . $kondisi['komunikasi'] . '</td>';
-				echo '<td>' . $kondisi['medis'] . '</td>';
+				echo '<td>' . ($kondisi['air']?'Ada':'-') . '</td>';
+				echo '<td>' . ($kondisi['makanan']?'Ada':'-') . '</td>';
+				echo '<td>' . ($kondisi['listrik']?'Ada':'-') . '</td>';
+				echo '<td>' . ($kondisi['komunikasi']?'Ada':'-') . '</td>';
+				echo '<td>' . ($kondisi['medis']?'Ada':'-') . '</td>';
 				echo '<td>' . $kondisi['total_pengungsi'] . '</td>';
 				echo '<td>' . $kondisi['korban_sakit_ringan'] . '</td>';
 				echo '<td>' . $kondisi['korban_sakit_berat'] . '</td>';

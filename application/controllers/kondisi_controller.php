@@ -1,6 +1,6 @@
 <?php
     /**
-     * 
+     * Controller untuk kondisi daerah bencana.
      */
     class Kondisi_Controller extends CI_Controller {
         
@@ -94,12 +94,18 @@
 			}
 		}
 		
+		/**
+		 * Hapus kondisi dan daerah berdasarkan ID.
+		 */
 		public function delete($id) {
 			$this->kondisi_model->delete($id);
 			
 			redirect('kondisi_controller');
 		}
 		
+		/**
+		 * Ambil detail kondisi dan daerah berdasarkan ID.
+		 */
 		public function detail($id) {
 			$data['kondisi'] = $this->kondisi_model->getDetail($id);
 			

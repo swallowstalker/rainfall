@@ -26,6 +26,6 @@
 	
 	echo ' <a href="'. site_url() .'/kondisi_controller/formEdit/'. $kondisi['id'] .'">[edit]</a> ';
 	echo ' <a href="'. site_url() .'/kondisi_controller/delete/'. $kondisi['id'] .'">[delete]</a> ';
-	echo '<br /><br />';
+	echo br(2);
 	echo ' <a href="'. site_url() .'/kondisi_controller">[kembali]</a> ';
 ?>
