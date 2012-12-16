@@ -58,13 +58,13 @@
 		 * Melakukan proses dari form edit yang telah disubmit.
 		 */
 		public function processEdit() {
+			$id = $this->input->post('id');
 			$masalahEdited = array(
-				'id' => $this->input->post('id'),
 				'deskripsi' => $this->input->post('deskripsi'),
 				'deadline' => $this->input->post('deadline')
 			);
 			
-			if($this->masalah_model->edit($masalahEdited['id'], $masalahEdited)) {
+			if($this->masalah_model->edit($id, $masalahEdited)) {
 				redirect('masalah_controller');
 			} else {
 				redirect('masalah_controller/formEdit/' . $masalahEdited['id']);
