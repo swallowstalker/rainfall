@@ -1,6 +1,6 @@
 <?php
     /**
-     * 
+     * Model untuk kondisi daerah bencana.
      */
     class Kondisi_Model extends CI_Model {
         

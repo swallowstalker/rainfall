@@ -1,6 +1,10 @@
 <?php
 	
 	echo 'Daftar masalah:' . br(1);
+	if ($listMasalah == NULL) {
+		echo 'Masalah kosong.' . br(1);
+	} else {
+	
 	
 ?>
 
@@ -40,6 +44,7 @@
 </table>
 
 <?php
+	}
 	echo br(1);
 	echo ' <a href="'. site_url() .'/masalah_controller/formAdd">[tambah masalah baru]</a> ';
 ?>

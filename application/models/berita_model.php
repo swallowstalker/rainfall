@@ -1,6 +1,6 @@
 <?php
     /**
-     * Controller untuk berita pada daerah bencana.
+     * Model untuk berita pada daerah bencana.
      */
     class Berita_Model extends CI_Model {
         

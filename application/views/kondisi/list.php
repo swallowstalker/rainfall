@@ -1,6 +1,9 @@
 <?php
 	
 	echo 'Daftar kondisi: ' . br(1);
+	if ($listKondisi == NULL) {
+		echo 'Kondisi kosong.' . br(1);
+	} else {
 	
 ?>
 
@@ -52,6 +55,7 @@
 </table>
 
 <?php
+	}
 	echo br(1);
 	echo ' <a href="'. site_url() .'/kondisi_controller/formAdd">[tambah kondisi baru]</a> ';
 ?>
