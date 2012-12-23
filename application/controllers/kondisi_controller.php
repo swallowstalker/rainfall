@@ -15,18 +15,19 @@
 			// menampilkan list dari masalah berdasarkan mode.
 			$data['listKondisi'] = $this->kondisi_model->getAll();
 			
-			if ($data['listKondisi']) {
-				$this->load->view('kondisi/list', $data);
-			} else {
-				echo "Kondisi kosong.";
-			}
+			$this->load->view('master/header');
+			$this->load->view('kondisi/list', $data);
+			$this->load->view('master/footer');
+			
 		}
 		
 		/**
 		 * Menampilkan form untuk add daerah dan kondisi.
 		 */
 		public function formAdd() {
+			$this->load->view('master/header');
 			$this->load->view('kondisi/add');
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -63,7 +64,9 @@
 		public function formEdit($id) {
 			$data['kondisi'] = $this->kondisi_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('kondisi/edit', $data);
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -109,7 +112,9 @@
 		public function detail($id) {
 			$data['kondisi'] = $this->kondisi_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('kondisi/detail', $data);
+			$this->load->view('master/footer');
 		}
     }
 ?>

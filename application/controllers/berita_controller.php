@@ -11,14 +11,19 @@
 		public function index() {
 			// menampilkan list dari masalah berdasarkan mode.
 			$data['listBerita'] = $this->berita_model->getAll();
+			
+			$this->load->view('master/header');
 			$this->load->view('berita/list', $data);
+			$this->load->view('master/footer');
 		}
 		
 		/**
 		 * Menampilkan form add berita.
 		 */
 		public function formAdd() {
+			$this->load->view('master/header');
 			$this->load->view('berita/add');
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -47,7 +52,9 @@
 		public function formEdit($id) {
 			$data['berita'] = $this->berita_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('berita/edit', $data);
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -86,7 +93,9 @@
 		public function detail($id) {
 			$data['berita'] = $this->berita_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('berita/detail', $data);
+			$this->load->view('master/footer');
 		}
     }
     

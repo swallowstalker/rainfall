@@ -15,18 +15,18 @@
 			// menampilkan list dari masalah berdasarkan mode.
 			$data['listMasalah'] = $this->masalah_model->getAll(ALL_LIST);
 			
-			if ($data['listMasalah']) {
-				$this->load->view('masalah/list', $data);
-			} else {
-				echo "Tidak ada masalah :)";
-			}
+			$this->load->view('master/header');
+			$this->load->view('masalah/list', $data);
+			$this->load->view('master/footer');
 		}
 		
 		/**
 		 * Menampilkan form tambah masalah.
 		 */
 		public function formAdd() {
+			$this->load->view('master/header');
 			$this->load->view('masalah/add');
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -51,7 +51,9 @@
 		public function formEdit($id) {
 			$data['masalah'] = $this->masalah_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('masalah/edit', $data);
+			$this->load->view('master/footer');
 		}
 		
 		/**
@@ -93,7 +95,9 @@
 		public function detail($id) {
 			$data['masalah'] = $this->masalah_model->getDetail($id);
 			
+			$this->load->view('master/header');
 			$this->load->view('masalah/detail', $data);
+			$this->load->view('master/footer');
 			
 		}
     }
