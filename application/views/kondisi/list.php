@@ -24,30 +24,27 @@
 			<th>Detail</th>
 			<th>Edit</th>
 			<th>Delete</th>
-			<th>Tandai</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
-			
 		    foreach ($listKondisi as $kondisi) {
 		    	echo '<tr>';
 		        echo '<td>' . $kondisi['nama_daerah'] . '</td>';
-				echo '<td>' . ($kondisi['air']?'Ada':'-') . '</td>';
-				echo '<td>' . ($kondisi['makanan']?'Ada':'-') . '</td>';
-				echo '<td>' . ($kondisi['listrik']?'Ada':'-') . '</td>';
-				echo '<td>' . ($kondisi['komunikasi']?'Ada':'-') . '</td>';
-				echo '<td>' . ($kondisi['medis']?'Ada':'-') . '</td>';
+				echo '<td>' . ($kondisi['air']?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>') . '</td>';
+				echo '<td>' . ($kondisi['makanan']?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>') . '</td>';
+				echo '<td>' . ($kondisi['listrik']?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>') . '</td>';
+				echo '<td>' . ($kondisi['komunikasi']?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>') . '</td>';
+				echo '<td>' . ($kondisi['medis']?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>') . '</td>';
 				echo '<td>' . $kondisi['total_pengungsi'] . '</td>';
 				echo '<td>' . $kondisi['korban_sakit_ringan'] . '</td>';
 				echo '<td>' . $kondisi['korban_sakit_berat'] . '</td>';
 				echo '<td>' . $kondisi['korban_tewas'] . '</td>';
 				echo '<td>' . $kondisi['update_terakhir'] . '</td>';
 				
-				echo '<td><a href="'. site_url() .'/kondisi_controller/detail/'. $kondisi['id'] .'">[lihat detail]</a></td>';
-				echo '<td><a href="'. site_url() .'/kondisi_controller/formEdit/'. $kondisi['id'] .'">[edit]</a></td>';
-				echo '<td><a href="'. site_url() .'/kondisi_controller/delete/'. $kondisi['id'] .'">[delete]</a></td>';
-				echo '<td><a href="'. site_url() .'/kondisi_controller/mark/'. $kondisi['id'] .'">[tandai sudah selesai]</a></td>';
+				echo '<td><a href="'. site_url() .'/kondisi_controller/detail/'. $kondisi['id'] .'"><i class="icon-eye-open"></i></a></td>';
+				echo '<td><a href="'. site_url() .'/kondisi_controller/formEdit/'. $kondisi['id'] .'"><i class="icon-pencil"></i></a></td>';
+				echo '<td><a href="'. site_url() .'/kondisi_controller/delete/'. $kondisi['id'] .'"><i class="icon-trash"></i></a></td>';
 				echo '</tr>';
 		    }
 		?>
@@ -57,5 +54,5 @@
 <?php
 	}
 	echo br(1);
-	echo ' <a href="'. site_url() .'/kondisi_controller/formAdd">[tambah kondisi baru]</a> ';
+	echo ' <a href="'. site_url() .'/kondisi_controller/formAdd"><i class="icon-plus-sign"></i> Tambah kondisi baru</a> ';
 ?>
